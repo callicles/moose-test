@@ -7,7 +7,7 @@ retention_ms = 30000
 replication_factor = 1
 
 [clickhouse_config]
-db_name = "local"
+db_name = "test-1"
 user = "panda"
 password = "pandapass"
 use_ssl = false
