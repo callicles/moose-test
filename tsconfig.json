@@ -1,0 +1,14 @@
+{
+  "outDir": "dist",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "paths": {
+      "datamodels/*": [
+        "./app/datamodels/*"
+      ],
+      "versions/*": [
+        "./.moose/versions/*"
+      ]
+    }
+  }
+}
