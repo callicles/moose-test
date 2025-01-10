@@ -1,6 +1,6 @@
 {
-  "outDir": "dist",
   "compilerOptions": {
+    "outDir": "dist",
     "esModuleInterop": true,
     "paths": {
       "datamodels/*": [

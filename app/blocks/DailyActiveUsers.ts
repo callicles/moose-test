@@ -1,4 +1,3 @@
-
 // Here is a sample aggregation query that calculates the number of daily active users
 // based on the number of unique users who complete a sign-in activity each day.
 

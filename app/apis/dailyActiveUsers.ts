@@ -1,4 +1,3 @@
-
 // Here is a sample api configuration that creates an API which serves the daily active users materialized view
 import { ConsumptionUtil } from "@514labs/moose-lib";
 
