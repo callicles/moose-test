@@ -1,5 +1,8 @@
 language = "Typescript"
 
+[authentication]
+admin_api_key = "4c8779f2c12cfbbf9d1e5d47d017b2a72da544d3"
+
 [redpanda_config]
 broker = "localhost:19092"
 message_timeout_ms = 1000
@@ -42,8 +45,6 @@ config_path = "config/dynamicconfig/development-sql.yaml"
 postgresql_version = "13"
 
 [supported_old_versions]
-
-[authentication]
 
 [features]
 streaming_engine = true
