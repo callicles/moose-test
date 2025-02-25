@@ -1,13 +1,15 @@
 {
-  "name": "moose-test",
+  "name": "test-empty",
   "version": "0.0",
   "scripts": {
+    "moose": "moose-cli",
     "dev": "moose-cli dev",
-    "build": "moose-cli build --docker",
-    "moose": "moose-cli"
+    "build": "moose-cli build --docker"
   },
   "dependencies": {
-    "@514labs/moose-lib": "latest"
+    "typia": "^7.6.0",
+    "@514labs/moose-lib": "latest",
+    "ts-patch": "^3.3.0"
   },
   "devDependencies": {
     "@514labs/moose-cli": "latest",
