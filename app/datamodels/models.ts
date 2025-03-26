@@ -6,7 +6,6 @@ export interface Foo {
   primaryKey: Key<string>;
   timestamp: number;
   optionalText?: string;
-  newField: string;
 }
 
 export interface Bar {
