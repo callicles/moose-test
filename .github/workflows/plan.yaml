@@ -27,7 +27,11 @@ jobs:
 
       - name: Plan
         id: plan
-        run: moose plan --url https://514-callicles-moose--main-5c28c4.boreal.cloud --token ${{ secrets.MOOSE_ADMIN_TOKEN }}
+        run: |
+          PLAN_OUTPUT=$(moose plan --url https://514-callicles-moose--main-5c28c4.boreal.cloud --token ${{ secrets.MOOSE_ADMIN_TOKEN }})
+          echo "plan<<EOF" >> $GITHUB_OUTPUT
+          echo "$PLAN_OUTPUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - uses: jwalton/gh-find-current-pr@v1
         id: finder
@@ -39,4 +43,6 @@ jobs:
             ## Plan
             Changes that will be applied to the infrastructure when this PR is merged:
 
+            ```
             ${{ steps.plan.outputs.plan }}
+            ```
