@@ -3,15 +3,14 @@
 import { Key } from "@514labs/moose-lib";
 
 export interface Foo {
-    primaryKey: Key<string>;
-    timestamp: number;
-    optionalText?: string;
+  primaryKey: Key<string>;
+  timestamp: number;
+  optionalText?: string;
 }
 
 export interface Bar {
-    primaryKey: Key<string>;
-    utcTimestamp: Date;
-    hasText: boolean;
-    textLength: number;
+  primaryKey: Key<string>;
+  utcTimestamp: Date;
+  hasText: boolean;
+  textLength: number;
 }
-
