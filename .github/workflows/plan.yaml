@@ -1,0 +1,38 @@
+name: Format
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Moose
+        run: curl -SfsL https://fiveonefour.com/install.sh | bash -s -- moose
+
+      - name: Plan
+        id: plan
+        run: moose plan --url https://514-callicles-moose--main-5c28c4.boreal.cloud --token ${{ secrets.MOOSE_ADMIN_TOKEN }}
+
+      - uses: jwalton/gh-find-current-pr@v1
+        id: finder
+
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          number: ${{ steps.finder.outputs.pr }}
+          message: |
+            ## Plan
+            Changes that will be applied to the infrastructure when this PR is merged:
+
+            ${{ steps.plan.outputs.plan }}
