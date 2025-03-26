@@ -17,7 +17,7 @@ SELECT
   sum(textLength) as totalTextLength,
   max(textLength) as maxTextLength
 FROM Bar_0_0
-GROUP BY dayOfMonth
+GROUP BY toDayOfMonth(utcTimestamp)
 `;
 
 const DROP_MV_QUERY = `

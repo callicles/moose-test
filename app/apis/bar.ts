@@ -30,7 +30,7 @@ export default createConsumptionApi<QueryParams>(
       LIMIT ${limit}
     `;
 
-    const data = await client.query<{
+    const data = await client.query.execute<{
       dayOfMonth: number;
       totalRows?: number;
       rowsWithText?: number;
