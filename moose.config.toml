@@ -1,6 +1,6 @@
 language = "Typescript"
 
-[kafka_config]
+[redpanda_config]
 broker = "localhost:19092"
 message_timeout_ms = 1000
 retention_ms = 30000
