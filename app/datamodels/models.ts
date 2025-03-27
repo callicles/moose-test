@@ -14,3 +14,10 @@ export interface Bar {
   hasText: boolean;
   textLength: number;
 }
+
+export interface FooFoo {
+  primaryKey: Key<string>;
+  timestamp: number;
+  description: string;
+  optionalText?: string;
+}
