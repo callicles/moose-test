@@ -2,23 +2,16 @@
   "compilerOptions": {
     "outDir": "dist",
     "esModuleInterop": true,
-    "paths": {
-      "datamodels/*": [
-        "./app/datamodels/*"
-      ],
-      "versions/*": [
-        "./.moose/versions/*"
-      ]
-    },
     "plugins": [
       {
-        "transform": "./node_modules/@514labs/moose-lib/dist/consumption-apis/insertTypiaValidation.js",
+        "transform": "./node_modules/@514labs/moose-lib/dist/compilerPlugin.js",
         "transformProgram": true
       },
       {
         "transform": "typia/lib/transform"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "declaration": true
   }
 }

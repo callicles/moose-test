@@ -1,5 +1,10 @@
 language = "Typescript"
 
+[typescript_config]
+# Package manager to use for installing dependencies
+# Options: "npm" (default), "pnpm", "yarn"
+package_manager = "npm"
+
 [redpanda_config]
 broker = "localhost:19092"
 message_timeout_ms = 1000
@@ -14,6 +19,7 @@ use_ssl = false
 host = "localhost"
 host_port = 18123
 native_port = 9000
+# additional_databases = ["analytics", "staging"]  # Optional: Additional databases to create on startup
 
 [http_server_config]
 host = "localhost"
@@ -31,8 +37,9 @@ main_branch_name = "main"
 db_user = "temporal"
 db_password = "temporal"
 db_port = 5432
-temporal_host = "localhost"
 temporal_port = 7233
+# Uncomment and set to "http" or "https" to force a specific scheme
+# temporal_scheme = "https"
 temporal_version = "1.22.3"
 admin_tools_version = "1.22.3"
 ui_version = "2.21.3"
@@ -40,17 +47,11 @@ ui_port = 8080
 ui_cors_origins = "http://localhost:3000"
 config_path = "config/dynamicconfig/development-sql.yaml"
 postgresql_version = "13"
-client_cert = ""
-client_key = ""
-ca_cert = ""
-api_key = ""
 
 [supported_old_versions]
 
-[authentication]
-admin_api_key = "4c8779f2c12cfbbf9d1e5d47d017b2a72da544d3"
-
 [features]
 streaming_engine = true
-workflows = false
-data_model_v2 = false
+workflows = true
+data_model_v2 = true
+apis = true
